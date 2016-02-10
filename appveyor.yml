@@ -23,7 +23,7 @@ install:
   - netsh advfirewall firewall add rule name="SeleniumIn" dir=in action=allow protocol=TCP localport=4444
   - netsh advfirewall firewall add rule name="SeleniumOut" dir=out action=allow protocol=TCP localport=4444
   # running selenium-standalone as background job
-  - ps: Start-Process selenium-standalone start
+   - ps: Start-Process selenium-standalone 'start','--','-Djna.nosys=true'
   # installing local npm packages
   - npm install
 
@@ -40,7 +40,7 @@ test_script:
 
 # scripts to run after tests
 on_finish :
-#  - cmd: node afterTest.js
+  - ps: (new-object net.webclient).UploadFile("https://ci.appveyor.com/api/testresults/junit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\junit\*.xml))
 # - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
 matrix:

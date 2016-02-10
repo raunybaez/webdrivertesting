@@ -1,13 +1,14 @@
 # Webdriverio running on Appveyor
-Using node 5.5.0 to support ES6 feature without using babel.
-All tests are running, but throw a selenium-standalone error on session end.
+
+* Using node 5.5.0 to support ES6 feature without using babel.
+* Using local selenium-standalone.
+* Important using `Dnja.nosys` param in order run selenium-standalone without errors.
+
 ```
-ERROR: Can't obtain updateLastError method for class com.sun.jna.Native
+ - ps: Start-Process selenium-standalone 'start','--','-Djna.nosys=true'
 ```
 
-[Appveyor]
-
-[Appveyor]: https://ci.appveyor.com/project/RainerAtSpirit/po
+[Appveyor build report](https://ci.appveyor.com/project/RainerAtSpirit/po)
 
 
 # Page Object Example
