@@ -1,24 +1,23 @@
 {
-  "name": "po",
+  "name": "webdriverio",
   "version": "1.0.0",
   "description": "Webdriverio pageobjects test repo",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/wdio wdio.conf.js"
   },
-  "author": "Rainer Wittmann",
+  "author": "RMB",
   "license": "MIT",
   "dependencies": {
-    "chai": "^3.5.0",
-    "webdriverio": "^4.0.3",
-    "wdio-mocha-framework": "^0.2.9",
-    "wdio-junit-reporter": "0.0.1"
+    "chai": "^4.2.0",
+    "webdriverio": "^6.1.2",
+    "wdio-mocha-framework": "^6.1.19"
   },
   "devDependencies": {
     "eslint": "^1.10.3",
     "eslint-config-airbnb": "^5.0.0"
   },
   "engines": {
-    "node": ">=5.5.0"
+    "node": ">=14.4.0"
   }
 }
