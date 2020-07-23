@@ -9,6 +9,8 @@ exports.config = {
   // NPM script (see https://docs.npmjs.com/cli/run-script) then the current working
   // directory is where your package.json resides, so `wdio` will be called from there.
   //
+  runner: 'local',
+
   specs: [
     './specs/*.spec.js'
   ],
@@ -38,10 +40,10 @@ exports.config = {
   logLevel: 'silent',
   //
   // Enables colors for log output.
-  coloredLogs: true,
+  //coloredLogs: true,
   //
   // Saves a screenshot to a given path if a command fails.
-  screenshotPath: './errorShots/',
+  //screenshotPath: './errorShots/',
   //
   // Set a base URL in order to shorten url command calls. If your url parameter starts
   // with "/", the base url gets prepended.
@@ -80,6 +82,23 @@ exports.config = {
   // your test setup with almost no self effort. Unlike plugins they don't add new
   // commands but hook themself up into the test process.
   // services: [],//
+  services: [
+        ['selenium-standalone', {
+            logPath: 'logs',
+            installArgs: {
+                drivers: {
+                    chrome: { version: '79.0.3945.88' },
+                    firefox: { version: '0.26.0' }
+                }
+            },
+            args: {
+                drivers: {
+                    chrome: { version: '79.0.3945.88' },
+                    firefox: { version: '0.26.0' }
+                }
+            },
+        }]
+    ],
   // Framework you want to run your specs with.
   // The following are supported: mocha, jasmine and cucumber
   // see also: http://webdriver.io/guide/testrunner/frameworks.html
