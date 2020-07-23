@@ -14,6 +14,8 @@ init:
 environment:
   nodejs_version: "14.4.0"
 
+image: Visual Studio 2017
+
 install:
   - ps: Install-Product node $env:nodejs_version x64
   # installing selenium-standalone
@@ -40,7 +42,7 @@ test_script:
 
 # scripts to run after tests
 on_finish :
-  - ps: (new-object net.webclient).UploadFile("https://ci.appveyor.com/api/testresults/junit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\junit\*.xml))
+# - ps: (new-object net.webclient).UploadFile("https://ci.appveyor.com/api/testresults/junit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\junit\*.xml))
 # - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
 matrix:
