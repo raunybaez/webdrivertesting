@@ -12,7 +12,7 @@ exports.config = {
   runner: 'local',
 
   specs: [
-    './specs/*.spec.js'
+    './specs/form.spec.js'
   ],
   //
   // ============
@@ -37,7 +37,7 @@ exports.config = {
   // Define all options that are relevant for the WebdriverIO instance here
   //
   // Level of logging verbosity: silent | verbose | command | data | result | error
-  logLevel: 'silent',
+  logLevel: 'trace',
   //
   // Enables colors for log output.
   //coloredLogs: true,
@@ -82,23 +82,24 @@ exports.config = {
   // your test setup with almost no self effort. Unlike plugins they don't add new
   // commands but hook themself up into the test process.
   // services: [],//
-  services: [
-        ['selenium-standalone', {
-            logPath: 'logs',
-            installArgs: {
-                drivers: {
-                    chrome: { version: '79.0.3945.88' },
-                    firefox: { version: '0.26.0' }
-                }
-            },
-            args: {
-                drivers: {
-                    chrome: { version: '79.0.3945.88' },
-                    firefox: { version: '0.26.0' }
-                }
-            },
-        }]
-    ],
+  services: ['chromedriver'],
+  // services: [
+  //       ['selenium-standalone', {
+  //           logPath: 'logs',
+  //           installArgs: {
+  //               drivers: {
+  //                   chrome: { version: '79.0.3945.88' },
+  //                   firefox: { version: '0.26.0' }
+  //               }
+  //           },
+  //           args: {
+  //               drivers: {
+  //                   chrome: { version: '79.0.3945.88' },
+  //                   firefox: { version: '0.26.0' }
+  //               }
+  //           },
+  //       }]
+  //   ],
   // Framework you want to run your specs with.
   // The following are supported: mocha, jasmine and cucumber
   // see also: http://webdriver.io/guide/testrunner/frameworks.html
