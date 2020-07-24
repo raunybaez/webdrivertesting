@@ -9,19 +9,14 @@ var formPage = Object.create(page, {
     form:     { get: function () { return ('#login'); } },
     flash:    { get: function () { return ('#flash'); } },
 
-    // get username() {return ('#username')},
-    // get password() {return ('#password')},
-    // get form() {return ('#login')},
-    // get flash() {return ('#flash')},
-
-    /**
+    /** 
      * define or overwrite page methods
      */
-    open: { value: function() {
+    open: { value: () => {
         page.open.call(this, 'login');
     } },
 
-    submit: { value: function() {
+    submit: { value: () => {
         this.form.submitForm();
     } }
 });
