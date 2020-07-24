@@ -9,7 +9,7 @@
   "author": "RMB",
   "license": "MIT",
   "dependencies": {
-    "webdriverio": "^4.14.2",
+    "webdriverio": "^5.1.0",
     "allure-commandline": "^2.13.0"
   },
   "devDependencies": {
