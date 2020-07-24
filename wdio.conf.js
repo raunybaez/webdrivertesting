@@ -89,7 +89,7 @@ exports.config = {
         //
         browserName: 'chrome',
         'goog:chromeOptions': {
-            //args: ['--disable-infobars', '--window-size=1920,1440'],
+            args: ['--headless'],
             prefs: {
                 'download.default_directory': downloadDir
             }
