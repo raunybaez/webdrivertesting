@@ -23,7 +23,7 @@
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
     "chai-webdriverio": "^1.0.0",
-    "chromedriver": "^79.0.0",
+    "chromedriver": "^84.0.0",
     "request": "^2.88.2",
     "supertest": "^4.0.2",
     "wdio-chromedriver-service": "^6.0.3"

@@ -4,6 +4,7 @@ const fs = require ('fs')
 
 // Store the directory path in a global, which allows us to access this path inside our tests
 global.downloadDir = path.join(__dirname, 'tempDownloads')
+global.reportsDir = path.join(__dirname, 'allure-report')
 
 function rmdir (dir) {
 	var list = fs.readdirSync(dir);
@@ -89,7 +90,9 @@ exports.config = {
         //
         browserName: 'chrome',
         'goog:chromeOptions': {
-            args: ['--headless'],
+            args: ['--headless', 'disable-gpu', '--window-size=1920,1080', '--disable-extensions', 
+                   '--proxy-bypass-list=*', '--start-maximized', '--disable-dev-shm-usage', '--no-sandbox',
+                   '--ignore-certificate-errors'],
             prefs: {
                 'download.default_directory': downloadDir
             }
@@ -106,7 +109,7 @@ exports.config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'trace',
+    logLevel: 'silent',
     //
     // Set specific log levels per logger
     // loggers:
@@ -146,13 +149,13 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    //services: ['chromedriver'],
-    services: [
-        ['chromedriver', {
-            outputDir: 'driver-logs', // overwrites the config.outputDir
-            args: ['--silent'] //
-        }]
-      ],
+    services: ['chromedriver'],
+    // services: [
+    //     ['chromedriver', {
+    //         outputDir: 'driver-logs', // overwrites the config.outputDir
+    //         args: ['--silent'] //
+    //     }]
+    //   ],
     // services: [
     //     ['selenium-standalone', {
     //         logPath: 'logs',
@@ -217,6 +220,9 @@ exports.config = {
         if (!fs.existsSync(downloadDir)){
             // if it doesn't exist, create it
             fs.mkdirSync(downloadDir)
+        }
+        if (fs.existsSync(reportsDir)){
+            rmdir(reportsDir)
         }
     },
     /**

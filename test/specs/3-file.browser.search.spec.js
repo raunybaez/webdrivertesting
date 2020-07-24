@@ -30,6 +30,7 @@ describe('file browser search', () => {
         BrowserPage.rightClickCardDownload()
         BrowserPage.checkFolderDownloadsPopup()
 
+        browser.pause(300)
         BrowserPage.rightClickCardInfo()
         expect(BrowserPage.popUpTitle.getText()).equal(testData.equipmentID)
         expect(BrowserPage.popUpText.getText()).contains("Type: Folder")

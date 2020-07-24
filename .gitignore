@@ -5,6 +5,9 @@
 target/
 tmp/
 build/
+allure-results/
+allure-report/
+driver-logs/
 
 #---------------------------------
 # Extensions
