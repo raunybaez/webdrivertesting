@@ -8,6 +8,7 @@ build/
 allure-results/
 allure-report/
 driver-logs/
+junit/
 
 #---------------------------------
 # Extensions

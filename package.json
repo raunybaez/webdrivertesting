@@ -1,5 +1,5 @@
 {
-  "name": "webdriverio-test",
+  "name": "webdriverio",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -16,6 +16,8 @@
     "@babel/register": "^7.10.3",
     "@wdio/allure-reporter": "^6.1.23",
     "@wdio/cli": "^6.1.22",
+    "@wdio/dot-reporter": "^6.3.0",
+    "@wdio/junit-reporter": "^6.3.4",
     "@wdio/local-runner": "^6.1.22",
     "@wdio/mocha-framework": "^6.1.19",
     "@wdio/spec-reporter": "^6.1.14",
