@@ -53,7 +53,7 @@ exports.config = {
     //
     specs: [
         //'./test/specs/**/*.js'
-        './test/specs/2-file.browser.spec.js'
+        './test/specs/*login.spec.js'
     ],
     // Patterns to exclude.
     exclude: [
